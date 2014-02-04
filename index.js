@@ -1,6 +1,6 @@
 var Request = require('request');
 
-module.exports = function Ricoptcha(publicKey, privateKey, theme, data){
+var Ricoptcha = module.exports = function Ricoptcha(publicKey, privateKey, theme, data){
     if(theme && 'redwhiteblackglassclean'.indexOf(theme) > -1){
         this.widget = Ricoptcha.prototype._themeScript.replace(/{{theme}}/g, theme).replace(/{{themeScriptCustom}}/, '');
         this.widget += Ricoptcha.prototype._widgetScript.replace(/{{recaptchaPublicKey}}/g, publicKey);
